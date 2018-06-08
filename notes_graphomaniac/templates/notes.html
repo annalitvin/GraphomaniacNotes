@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %} Добавить заметку {% endblock %}
+
+{% block content %}
+    <div class="notes-content">
+            {% for note in notes_list %}
+            <div class="note__item">
+                <div class="text__item">{{note.text}}</div>
+                <div class="date__item">Дата создания: {{note.date}}</div>
+                <div class="unique-word-count__item">Количество уникальных слов {{note.count_unique_words}}</div>
+            </div>
+            {% endfor %}
+        </form>
+    </div>
+{% endblock %}
+

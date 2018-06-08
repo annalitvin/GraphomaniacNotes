@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} Добавить заметку {% endblock %}
+
+{% block content %}
+    <div class="form-content">
+        <form action="" method="post">
+            {% csrf_token %}
+            {% for field in form_for_note %}
+            <label for="">{{field.label}}</label>
+            <div class="form-group">
+                {{field}}
+
+                {% if field.errors %}
+                    {{field.errors}}
+                {% endif %}
+            </div>
+            {% endfor %}
+            <button type="submit">Отправить</button>
+        </form>
+        <p>{{success}}</p>
+    </div>
+{% endblock %}
+

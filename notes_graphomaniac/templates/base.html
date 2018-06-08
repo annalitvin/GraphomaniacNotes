@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Заметки Грамофона{% endblock %}</title>
+    {% load static %}
+    <link href="{% static './styles.css' %}" rel="stylesheet">
+</head>
+<body>
+<div class="page-wrapper">
+    <div class="page-wrapper-content">
+        <h2 class="page-wrapper-content__title">Заметки графомана</h2>
+        <div class="page-wrapper-content-links">
+            <a class="page-wrapper-content__link" href="/add_notes/">Добавить заметку</a>
+        | <a class="page-wrapper-content__link" href="/notes/">Просмотреть все записи</a>
+        </div>
+
+        {% block content %}
+            <div class="main-image-banner-content">
+                <img src="{% static 'assets/grafoman.jpg' %}" alt="" class="main-image-banner_image center">
+                
+            </div>
+        {% endblock %}
+    </div>
+</div>
+
+</body>
+</html>
